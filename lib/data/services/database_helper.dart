@@ -19,20 +19,20 @@ class DatabaseHelper{
       title TEXT,
       content TEXT,
       color TEXT,
-      dateTime TEXT,
+      dateTime TEXT
     )
     ''';
     await db.execute(sql);
   }
 
   // write data.........
-  static Future<int> insertNote(NoteModel noteModel) async{
+   Future<int> insertNote(NoteModel noteModel) async{
     Database db = await DatabaseHelper.initDatabase();
     return await db.insert('notes', noteModel.toMap());
   }
 
   // read data.........
-  static Future<List<NoteModel>> getNote() async{
+   Future<List<NoteModel>> getNote() async{
     Database db = await DatabaseHelper.initDatabase();
     var note = await db.query('notes');
     List<NoteModel> noteList = note.isNotEmpty
@@ -42,13 +42,13 @@ class DatabaseHelper{
   }
 
   // update data.........
-  static Future<int> updateNote(NoteModel noteModel) async{
+   Future<int> updateNote(NoteModel noteModel) async{
     Database db = await DatabaseHelper.initDatabase();
     return await db.update('notes', noteModel.toMap(), where: 'id=?', whereArgs: [noteModel.id]);
   }
 
   // deleted data.........
-  static Future<int> deletedNote(int id) async{
+   Future<int> deletedNote(int id) async{
     Database db = await DatabaseHelper.initDatabase();
     return await db.delete('notes', where: 'id=?', whereArgs: [id]);
   }
