@@ -50,6 +50,12 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.noteModel == null? "Add Notes":"Edit Notes"),
+        leading: IconButton(
+          onPressed: (){
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios,color: Colors.black,),
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(

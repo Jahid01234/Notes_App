@@ -107,7 +107,7 @@ class _ViewNoteScreenState extends State<ViewNoteScreen> {
             Expanded(
                 child: Container(
                   width: double.infinity,
-                  padding: const EdgeInsets.fromLTRB(24, 32, 24, 24),
+                  padding: const EdgeInsets.fromLTRB(24, 32, 24, 2),
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -115,12 +115,18 @@ class _ViewNoteScreenState extends State<ViewNoteScreen> {
                         topRight: Radius.circular(20),
                     ),
                   ),
-                  child: Text(
-                    widget.noteModel.content,
-                    style: const TextStyle(
-                        fontSize: 16,
-                        color: Colors.black,
-                    ),
+                  child: ListView(
+                    scrollDirection: Axis.vertical,
+                    children: [
+                      Text(
+                        widget.noteModel.content,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      ),
+                      const SizedBox(height: 20)
+                    ],
                   ),
                 ),
             ),
@@ -135,14 +141,25 @@ class _ViewNoteScreenState extends State<ViewNoteScreen> {
         context: context,
         builder:(context){
           return AlertDialog(
-            title: const Text("Deleted Note"),
-            content: const Text("Are you sure you want deleted this note?"),
+            title: const Text(
+              "Deleted Note",
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 18,
+              ),
+            ),
+            content: const Text("Are you sure that you want to deleted this note?"),
             actions: [
               TextButton(
                   onPressed: (){
                     Navigator.pop(context,false);
                   },
-                  child: const Text("Cancel"),
+                  child: const Text(
+                    "Cancel",
+                    style: TextStyle(
+                       color: Colors.teal,
+                    ),
+                  ),
               ),
               TextButton(
                 onPressed: ()async{
@@ -151,7 +168,12 @@ class _ViewNoteScreenState extends State<ViewNoteScreen> {
                     showSnackBarMessage(context, "Note deleted successfully!");
                   }
                },
-                child: const Text("Delete"),
+                child: const Text(
+                  "Delete",
+                  style: TextStyle(
+                    color: Colors.red,
+                  ),
+                ),
               ),
             ],
           );

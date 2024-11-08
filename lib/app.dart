@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/presentation/screens/home_screen.dart';
+import 'package:notes_app/presentation/screens/splash_screen.dart';
 
 class NotesApp extends StatelessWidget {
   const NotesApp({super.key});
@@ -9,6 +10,7 @@ class NotesApp extends StatelessWidget {
     return MaterialApp(
       title: 'Notes App',
       debugShowCheckedModeBanner: false,
+      home: const SplashScreen(),
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
@@ -47,7 +49,6 @@ class NotesApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const HomeScreen(),
     );
   }
 }
