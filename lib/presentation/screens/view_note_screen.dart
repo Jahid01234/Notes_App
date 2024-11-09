@@ -71,7 +71,7 @@ class _ViewNoteScreenState extends State<ViewNoteScreen> {
           children: [
             // 1st column (title/Time)............
             Padding(
-                padding: const EdgeInsets.only(top: 15,left: 15,bottom: 10,right: 5),
+              padding: const EdgeInsets.only(top: 15,left: 15,bottom: 10,right: 5),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -81,7 +81,7 @@ class _ViewNoteScreenState extends State<ViewNoteScreen> {
                     style: const TextStyle(
                       fontSize: 18,
                       color: Colors.white,
-                      fontWeight: FontWeight.bold
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   const SizedBox(height: 10,),
@@ -104,6 +104,7 @@ class _ViewNoteScreenState extends State<ViewNoteScreen> {
               ),
             ),
             const SizedBox(height: 20),
+            // content part......
             Expanded(
                 child: Container(
                   width: double.infinity,
@@ -111,7 +112,7 @@ class _ViewNoteScreenState extends State<ViewNoteScreen> {
                   decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
+                        topLeft: Radius.circular(20),
                         topRight: Radius.circular(20),
                     ),
                   ),
@@ -125,7 +126,7 @@ class _ViewNoteScreenState extends State<ViewNoteScreen> {
                           color: Colors.black,
                         ),
                       ),
-                      const SizedBox(height: 20)
+                      const SizedBox(height: 20),
                     ],
                   ),
                 ),

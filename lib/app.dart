@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/presentation/screens/home_screen.dart';
 import 'package:notes_app/presentation/screens/splash_screen.dart';
 
 class NotesApp extends StatelessWidget {
