@@ -130,9 +130,9 @@ class _AddEditNoteScreenState extends State<AddEditNoteScreen> {
                     onPressed: (){
                       _saveNote();
                     },
-                    child: const Text(
-                      "Save Note",
-                      style: TextStyle(
+                    child:  Text(
+                      widget.noteModel == null? "Add Note" : "Updated Note",
+                      style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                       ),
